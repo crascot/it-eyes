@@ -1,0 +1,74 @@
+.settings button {
+    background-color: #ffff;
+    color: #000000 !important;
+    border: 1px solid #000000;
+}
+
+.settings button {
+    width: max-content !important;
+    height: 52px !important;
+    border-radius: 0 !important;
+}
+
+.settings span {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.settings h5 {
+    margin-top: 40px;
+    margin-bottom: 19px;
+}
+
+.serif button:first-child {
+    font-family: serif !important;
+}
+
+.spacing button:first-child {
+    letter-spacing: normal !important;
+}
+.spacing button:nth-child(2) {
+    letter-spacing: 9px !important;
+}
+.spacing button:nth-child(3) {
+    letter-spacing: 13px !important;
+}
+
+.theme button:first-child {
+    color: #004570 !important;
+}
+.theme button:nth-child(2) {
+    background-color: #004570 !important;
+    color: #ffff !important;
+}
+.theme button:nth-child(3) {
+    background-color: #FEE7CF !important;
+    color: #542F07 !important;
+}
+.theme button:nth-child(4) {
+    background-color: #403524 !important;
+    color: #FAFF00 !important;
+}
+.theme button:nth-child(5) {
+    background-color: #9DD1FF !important;
+    color: #000D80 !important;
+}
+
+.settings .fontSize {
+    margin-top: 40px;
+}
+.settings .fontSize h5 {
+    margin: 0;
+}
+
+.fontSize button:first-child {
+    font-size: 14px !important;
+}
+.fontSize button:nth-child(2) {
+    font-size: 24px !important;
+}
+.fontSize button:nth-child(3) {
+    font-size: 29px;
+}

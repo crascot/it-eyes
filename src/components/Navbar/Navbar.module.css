@@ -1,0 +1,35 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 44px;
+    margin-bottom: 77px;
+}
+
+.navbar .search {
+    border: 2px solid var(--input-border);
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.search input {
+    background-color: inherit;
+    border: none;
+    outline: none;
+}
+.search input {
+    color: var(--text-color) !important;
+}
+
+.navbar .navLinks {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 36px;
+}
+.navLinks a {
+    font-size: var(--h5);
+    color: var(--text-color);
+}

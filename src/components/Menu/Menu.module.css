@@ -1,0 +1,63 @@
+.menu {
+    padding: 50px 56px;
+    background-color: var(--menu-bg);
+    max-height: 840px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    border-radius: 0 0 20px 0;
+}
+
+.menu .logoBlock {
+    background-color: var(--icon-color);
+    border-radius: 20px;
+    padding: 15px 0 10px 0;
+    display: flex;
+}
+
+.menu img {
+    margin: 40px 0;
+}
+
+.menu div {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.menu div a {
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 49px;
+    border: 1px solid var(--text-color);
+    border-radius: 10px;
+    background-color: var(--bg);
+    color: var(--text-color);
+    transition: 0.4s;
+}
+.menu div a:hover {
+    border: 1px solid var(--bg);
+    transition: 0.4s;
+    background-color: var(--text-color);
+    color: var(--bg);
+}
+
+.customMenu a {
+    border: 1px solid var(--button-text);
+    background-color: var(--menu-bg);
+    color: var(--button-text);
+}
+
+.active {
+    background-color: #FFF2AB !important;
+    color: #000000 !important;
+}
+.active:hover {
+    background-color: #FFF2AB !important;
+    color: #000000 !important;
+}

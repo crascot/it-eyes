@@ -1,13 +1,162 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Inter';
+  src: url('./common/font/Inter-Bold.ttf');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  font-family: var(--fontFamily);
+  letter-spacing: var(--letterSpacing) !important;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+}
+
+body.serif {
+  --fontFamily: serif;
+}
+
+body.spacingMiddle {
+  --letterSpacing: 9px;
+}
+
+body.spacingBig {
+  --letterSpacing: 13px;
+}
+
+body {
+  --bg: #FFFFFF;
+  --button: #00831D;
+  --button-text: #FFFFFF;
+  --title-color: #074624;
+  --text-color: #010101;
+  --menu-bg: #004570;
+  --menu-button-bg: #F5FBFF;
+  --menu-route-stroke: #FFF2AB;
+  --input-border: #380E83;
+  --icon-color: #3B1034;
+
+  --h1: 60px;
+  --h2: 32px;
+  --h3: 30px;
+  --h4: 28px;
+  --h5: 24px;
+  --p: 20px;
+  
+  --fontFamily: 'Inter';
+  --letterSpacing: normal;
+}
+
+body.invert {
+  --bg: #002B46;
+  --button: #70FFB2;
+  --button-text: #000000;
+  --title-color: #70FFB2;
+  --text-color: #FFFFFF;
+  --menu-bg: #FFFFFF;
+  --menu-button-bg: #003498;
+  --menu-route-stroke: #FFCF53;
+  --input-border: #FFFFFF;
+  --icon-color: #FF6CE7;
+}
+
+body.comfort {
+  --bg: #FFEACB;
+  --button: #830000;
+  --button-text: #FFFFFF;
+  --title-color: #830000;
+  --text-color: #000000;
+  --menu-bg: #FFFEDA;
+  --menu-button-bg: #BACE6B;
+  --menu-route-stroke: #830000;
+  --input-border: #593698;
+  --icon-color: #3B1034;
+}
+
+body.brown {
+  --bg: #3B2716;
+  --button: #C5FF64;
+  --button-text: #3B2716;
+  --title-color: #C5FF64;
+  --text-color: #C5FF64;
+  --menu-bg: #D6D6D6;
+  --menu-button-bg: #3B2716;
+  --menu-route-stroke: #9BCD46;
+  --input-border: #C5FF64;
+  --icon-color: #C5FF64;
+}
+
+body.blue {
+  --bg: #9DD1FF;
+  --button: #FFFFFF;
+  --button-text: #003869;
+  --title-color: #000000;
+  --text-color: #000000;
+  --menu-bg: #F0F0F0;
+  --menu-button-bg: #081223;
+  --menu-route-stroke: #3B2716;
+  --input-border: #000000;
+  --icon-color: #000000;
+}
+
+body.little {
+  --h1: 50px;
+  --h2: 22px;
+  --h3: 20px;
+  --h4: 18px;
+  --h5: 14px;
+  --p: 10px;
+}
+body.big {
+  --h1: 65px;
+  --h2: 37px;
+  --h3: 35px;
+  --h4: 32px;
+  --h5: 29px;
+  --p: 25px;
+}
+
+button {
+  width: 386px;
+  height: 85px;
+  background-color: var(--button);
+  color: var(--button-text);
+  border-radius: 20px;
+  border: 3px solid var(--button);
+  font-size: var(--h2);
+  cursor: pointer;
+  transition: 0.4s;
+}
+button:hover {
+  transition: 0.4s;
+  background-color: var(--button-text);
+  color: var(--button);
+  border: 3px solid var(--input-border);
+}
+
+h1,h2,
+h3,h4,
+h5,p {
+  color: var(--text-color);
+}
+h1 {
+  font-size: var(--h1);
+}
+h2 {
+  font-size: var(--h2);
+}
+h3 {
+  font-size: var(--h3);
+}
+h4 {
+  font-size: var(--h4);
+}
+h5 {
+  font-size: var(--h5);
+}
+
+a {
+  text-decoration: none;
 }
