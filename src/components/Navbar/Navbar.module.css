@@ -27,9 +27,11 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 36px;
 }
-.navLinks a {
+.navLinks a,
+.navLinks p {
     font-size: var(--h5);
     color: var(--text-color);
 }

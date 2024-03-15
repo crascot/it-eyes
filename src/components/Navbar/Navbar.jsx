@@ -11,9 +11,9 @@ export const Navbar = () => {
                 <Search />
             </div>
             <div className={s.navLinks}>
-                <a href="">Новости</a>
+                <p>Новости</p>
                 <Link to='/settings'>Настроить</Link>
-                <a href="">Трансляции online</a>
+                <p>Трансляции online</p>
             </div>
         </div>
     )

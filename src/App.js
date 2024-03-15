@@ -9,7 +9,7 @@ import LessonPage from './pages/LessonPage/LessonPage';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter basename='/it-eyes' >
+      <BrowserRouter basename='/it-eyes'>
         <Routes>
           <Route path='/' element={<ComponentWithMenu child={<About />} />} />
           <Route path='/settings' element={<ComponentWithMenu child={<Settings />} />} />
