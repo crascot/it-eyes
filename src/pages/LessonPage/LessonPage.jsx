@@ -8,11 +8,11 @@ import LessonThree from './lessons/lesson-three'
 const menuNavigate = [
     {
         id: 1,
-        text: '1.Введение в программирование'
+        text: '1.Введение в IT'
     },
     {
         id: 2,
-        text: '2.Язык программирования JAVA'
+        text: '2.Язык JAVA'
     },
     {
         id: 3,

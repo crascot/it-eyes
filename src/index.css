@@ -19,11 +19,11 @@ body.serif {
 }
 
 body.spacingMiddle {
-  --letterSpacing: 9px;
+  --letterSpacing: 3px;
 }
 
 body.spacingBig {
-  --letterSpacing: 13px;
+  --letterSpacing: 9px;
 }
 
 body {
