@@ -30,6 +30,7 @@
     align-items: center;
     gap: 10px;
 }
+
 .menu div a,
 .menu div p {
     padding: 15px 5px;
@@ -48,6 +49,7 @@
     font-size: 24px;
     letter-spacing: normal !important;
 }
+
 .menu div a:hover,
 .menu div p:hover {
     border: 1px solid var(--bg);
@@ -66,7 +68,13 @@
     background-color: #FFF2AB !important;
     color: #000000 !important;
 }
+
 .active:hover {
     background-color: #FFF2AB !important;
     color: #000000 !important;
+}
+
+.hidden {
+    width: 30px !important;
+    overflow: hidden;
 }

@@ -1,0 +1,22 @@
+.coursePage h2 {
+    margin-bottom: 30px;
+}
+
+.coursePage .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.coursePage .content video,
+.coursePage .content img {
+    width: 50%;
+    border-radius: 12px;
+}
+
+.coursePage .content p {
+    margin-left: 50px;
+    width: 40%;
+    font-size: 30px;
+}
