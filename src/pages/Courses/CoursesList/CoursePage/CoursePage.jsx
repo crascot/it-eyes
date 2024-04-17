@@ -50,4 +50,4 @@ const CoursePage = () => {
     )
 }
 
-export default CoursePage;
+export default CoursePage
