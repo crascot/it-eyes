@@ -1,28 +1,24 @@
 import React from 'react'
 import s from './lesson.module.css'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const LessonOne = () => {
+    const { t } = useTranslation();
+
     return (
         <div className={s.lesson}>
-            <h3>Введение в программирование</h3>
-            <p>
-                Программи́рование — процесс создания и модификации компьютерных программ.
-                Компьютерная программа – это набор инструкций для решения компьютером какой-либо задачи.
-            </p>
-            <p>Например:</p>
+            <h3>{t('lessonsList.introduction')}</h3>
+            <p>{t('lessonPage.programming')}</p>
+            <p>{t('example')}</p>
             <ul>
-                <li>Калькулятор – это программа, позволяющая производить элементарные арифметические операции.</li>
-                <li>Программа WhatsApp позволяет обмениваться сообщениями с другими людьми.</li>
-                <li>Google Chrome, через который вы скорее всего зашли на этот сайт, – это программа, предназначенная для просмотра веб-страниц.</li>
+                <li>{t('lessonPage.calculator')}</li>
+                <li>{t('lessonPage.whatsapp')}</li>
+                <li>{t('lessonPage.google')}</li>
             </ul>
-            <p>
-                Для создания этих и многих других программ используются языки программирования.
-                Выбор языка программирования, как правило, продиктован особенностями программы,
-                которую вы собираетесь создать.
-            </p>
+            <p>{t('lessonPage.choose')}</p>
             <div className={s.button}>
-                <Link to='/lessons/page/2'>Дальше</Link>
+                <Link to='/lessons/page/2'>{t('next')}</Link>
             </div>
         </div>
     )

@@ -1,32 +1,26 @@
 import React from 'react'
 import s from './lesson.module.css'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const LessonTwo = () => {
+    const { t } = useTranslation();
+
     return (
         <div className={s.lesson}>
-            <h3>Язык программирования Java</h3>
-            <p>
-                Язык программирования — набор определенных правил,
-                по которым компьютер может понимать команды (инструкции) и выполнять их.
-                Текст программы на любом языке программирования называется программным кодом.
-            </p>
-            <p>На этом курсе вы научитесь писать программы на языке Java.</p>
-            <p>
-                Java — это достаточно универсальный язык программирования, который часто используется для разработки сайтов и приложений для смартфонов.
-                Именно с помощью Java были созданы многие программные продукты, широко известные во всём мире.
-            </p>
+            <h3>{t('lang')}</h3>
+            <p>{t('nabor')}</p>
+            <p>{t('onThisCourse')}</p>
+            <p>{t('javaThisMost')}</p>
             <ul>
-                <li>Minecraft – одна из немногих игр, написанных на Java;</li>
-                <li>Интернет - магазины eBay и Amazon;</li>
-                <li>Социальные сети: LinkedIn, Twitter, Facebook;</li>
-                <li>Платёжная система PayPal и многие другие.</li>
+                <li>{t('minecraft')}</li>
+                <li>{t('internet')}</li>
+                <li>{t('socts')}</li>
+                <li>{t('pay')}</li>
             </ul>
-            <p>
-                Кроме того, большинство Android - приложений были написаны на этом языке, так как Java — почти единственный язык для их разработки.
-            </p>
+            <p>{t('krome')}</p>
             <div className={s.button}>
-                <Link to='/lessons/page/3'>Дальше</Link>
+                <Link to='/lessons/page/3'>{t('next')}</Link>
             </div>
         </div>
     )

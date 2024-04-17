@@ -52,6 +52,13 @@
     height: max-content;
     padding: 15px 30px;
     border: none;
+    color: var(--button-text);
+    background-color: var(--button);
+}
+
+.courseBlock span:nth-child(2) button:hover {
+    color: var(--button);
+    background-color: var(--button-text);
 }
 
 .close {

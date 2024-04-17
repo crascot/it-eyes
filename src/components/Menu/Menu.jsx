@@ -3,9 +3,11 @@ import { ReactComponent as Logo } from '../../common/icons/logo.svg'
 import logoImg from '../../common/images/logo.png'
 import s from './Menu.module.css'
 import { Link, useParams } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 const Menu = ({ menu }) => {
   const { id } = useParams();
+  const { t } = useTranslation();
 
   return (
     <div className={s.menu}>
@@ -25,11 +27,11 @@ const Menu = ({ menu }) => {
           )}</div>
           :
           <div>
-            <Link to='/'>Главная</Link>
-            <Link to='/courses'>Наши курсы</Link>
+            <Link to='/'>{t('glav')}</Link>
+            <Link to='/courses'>{t('nashi')}</Link>
             <p>Статистика</p>
-            <p>Менторы</p>
-            <p>Поддержка</p>
+            <p>{t('ment')}</p>
+            <p>{t('support')}</p>
           </div>
       }
     </div>

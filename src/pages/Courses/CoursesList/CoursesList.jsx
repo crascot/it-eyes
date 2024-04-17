@@ -1,48 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import s from './CoursesList.module.css';
 import java from '../../../common/images/java.png';
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Lock } from '../../../common/icons/lock.svg';
-import test from '../../../video/java.jpg';
-
-const coursArray = [
-    {
-        id: 0,
-        title: 'Сабак 1',
-        theme: 'Тема которую мы в будущем добавим а сейчас это для вида',
-        isBlocked: false
-    },
-    {
-        id: 1,
-        title: 'Сабак 2',
-        theme: 'Тема которую мы в будущем добавим а сейчас это для вида',
-        isBlocked: false
-    },
-    {
-        id: 3,
-        title: 'Сабак 3',
-        theme: 'Тема которую мы в будущем добавим а сейчас это для вида',
-        isBlocked: true
-    }
-]
+import { useTranslation } from "react-i18next";
+import axios from "axios";
+import { Loader } from "../../../components/Loader/Loader";
 
 const CourseBlock = (props) => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     return (
         <div className={s.courseBlock}>
             <span>
-                <h2><p>{props.title}</p> {props.theme}</h2>
-                <img src={test} alt='java' />
+                <h2><p>{t('lesson')} {props.index}</p> {props.titleName}</h2>
+                <img src={`data:image/jpeg;base64,${props.image}`} alt="course" />
             </span>
             <span>
-                <button onClick={() => navigate(`/courses-list/course/${props.id}`)}>
-                    Начать
+                <button onClick={() => navigate(`/courses-list/course/${props.index}`)}>
+                    {t('startButton')}
                 </button>
                 <img src={java} alt="sprite" />
             </span>
             {
-                props.isBlocked ?
+                props.isblocked ?
                     <div className={s.close}><Lock /></div>
                     :
                     ''
@@ -52,17 +34,34 @@ const CourseBlock = (props) => {
 }
 
 const CoursesList = () => {
+    const { t } = useTranslation();
+    const [coursArray, setCoursArray] = useState([]);
+
+    const getCourses = () => {
+        axios.get('http://26.249.120.155:8000/get-lessons/')
+            .then((res) => setCoursArray(res.data))
+            .catch((err) => console.log(err))
+    }
+
+    useEffect(() => {
+        getCourses();
+    }, [])
+
+    if (!coursArray.length) return <Loader />
+
     return (
         <div className={s.courses}>
-            <h1>Программа курса</h1>
+            <h1>{t('lessonsList.programmCourse')}</h1>
             <div className={s.list}>
                 {
-                    coursArray.map(course => <CourseBlock
-                        id={course.id}
-                        title={course.title}
-                        theme={course.theme}
-                        isBlocked={course.isBlocked}
-                    />)
+                    coursArray.map((course, i) =>
+                        <CourseBlock
+                            id={course.id}
+                            titleName={course.titleName}
+                            image={course.image}
+                            isblocked={course.isblocked}
+                            index={i + 1}
+                        />)
                 }
             </div>
         </div>

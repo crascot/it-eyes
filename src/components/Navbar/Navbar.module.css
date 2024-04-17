@@ -14,11 +14,13 @@
     padding: 5px 15px;
     border-radius: 10px;
 }
+
 .search input {
     background-color: inherit;
     border: none;
     outline: none;
 }
+
 .search input {
     color: var(--text-color) !important;
 }
@@ -30,8 +32,17 @@
     align-items: center;
     gap: 36px;
 }
+
 .navLinks a,
 .navLinks p {
     font-size: var(--h5);
     color: var(--text-color);
+}
+
+.navbar .navLinks svg {
+    padding: 2px;
+    background-color: #010101;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 30px;
 }

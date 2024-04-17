@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './providers/Themeprovider';
 import ComponentWithMenu from './components/ComponentWithMenu/ComponentWithMenu'
 import About from './pages/About/About';
@@ -8,11 +8,12 @@ import LessonPage from './pages/LessonPage/LessonPage';
 import Courses from './pages/Courses/Courses';
 import CoursesList from './pages/Courses/CoursesList/CoursesList';
 import CoursePage from './pages/Courses/CoursesList/CoursePage/CoursePage';
+import './i18next';
 
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter basename='/it-eyes'>
+      <BrowserRouter basename='/'>
         <Routes>
           <Route path='/' element={<ComponentWithMenu child={<About />} />} />
           <Route path='/settings' element={<ComponentWithMenu child={<Settings />} />} />

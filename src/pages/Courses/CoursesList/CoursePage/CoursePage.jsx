@@ -1,47 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import video from '../../../../video/test.mp4';
 import s from './CoursePage.module.css';
-
-const test = {
-    title: 'Мобильная разработка Android приложений',
-    video: video,
-    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate molestiae consequuntur aliquam labore fugiat sint veritatis voluptatibus quas natus, tempore necessitatibus, assumenda ullam harum totam quo sapiente ipsam nam quaerat!s Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate molestiae consequuntur aliquam labore fugiat sint veritatis voluptatibus quas natus, tempore necessitatibus, assumenda ullam harum totam quo sapiente ipsam nam quaerat!sLorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate molestiae consequuntur aliquam labore fugiat sint veritatis voluptatibus quas natus, tempore necessitatibus, assumenda ullam harum totam quo sapiente ipsam nam quaerat!sLorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate molestiae consequuntur aliquam labore fugiat sint veritatis voluptatibus quas natus, tempore necessitatibus, assumenda ullam harum totam quo sapiente ipsam nam quaerat!sLorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate molestiae consequuntur aliquam labore fugiat sint veritatis voluptatibus quas natus, tempore necessitatibus, assumenda ullam harum totam quo sapiente ipsam nam quaerat!s'
-}
+import axios from "axios";
+import { Loader } from "../../../../components/Loader/Loader";
 
 const CoursePage = () => {
     const { id } = useParams();
     const [isActive, setIsActive] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const getText = () => {
-        setIsActive(!isActive);
+    const [course, setCourse] = useState(null);
+
+    useEffect(() => {
         setIsLoading(true);
+        axios.get(`http://26.249.120.155:8000/get-lesson/${Number(id)}`)
+            .then((res) => setCourse(res.data))
+            .catch((err) => console.log(err))
+            .finally(() => setIsLoading(false))
+    }, [id])
 
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 3000);
-    }
-
-    if (!test) return <h1>Загрузка</h1>
-
-    const textFunc = () => {
-        if (isActive) {
-            if (isLoading) {
-                return <p>Загрузка</p>
-            }
-            return <p className={s.text}>{test.text}</p>
-        }
-        return <button onClick={getText}>Показать текст</button>
-    }
+    if (!course) return <Loader />
 
     return (
         <div className={s.coursePage}>
-            <h2>{test.title}</h2>
+            <h2>{course.titleName}</h2>
             <div className={s.content}>
-                <div>{textFunc()}</div>
+                <div>
+                    {
+                        isActive ?
+                            isLoading ? <p>Загрузка</p> : <p className={s.text}>{course.theme}</p>
+                            :
+                            <button onClick={() => setIsActive(true)}>Показать текст</button>
+                    }
+                </div>
                 <video controls>
-                    <source src={test.video} type="video/mp4" />
+                    <source type="video/mp4" src={`data:video/mp4;base64,${course.video}`} />
                 </video>
             </div>
         </div>
