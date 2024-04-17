@@ -3,10 +3,10 @@ import s from './Settings.module.css'
 import { ThemeContext } from '../../providers/Themeprovider'
 
 const Settings = () => {
-    const [theme, setTheme] = useContext(ThemeContext).color;
-    const [textSize, setTextSize] = useContext(ThemeContext).size;
-    const [isSerif, setIsSerif] = useContext(ThemeContext).serif;
-    const [letterSpacing, setLetterSpacing] = useContext(ThemeContext).spacing;
+    const [, setTheme] = useContext(ThemeContext).color;
+    const [, setTextSize] = useContext(ThemeContext).size;
+    const [, setIsSerif] = useContext(ThemeContext).serif;
+    const [, setLetterSpacing] = useContext(ThemeContext).spacing;
 
     const standart = () => {
         setTheme('');

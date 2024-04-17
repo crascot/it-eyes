@@ -1,22 +1,53 @@
+.coursePage {
+    height: 80vh;
+}
+
 .coursePage h2 {
     margin-bottom: 30px;
 }
 
-.coursePage .content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-
 .coursePage .content video,
 .coursePage .content img {
-    width: 50%;
+    height: 500px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.coursePage .content .text {
+    width: 90%;
+    height: 200px;
+    line-height: 50px;
+    margin-left: 50px;
+    margin-bottom: 0;
+    font-size: 30px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.content button {
+    margin-bottom: 15px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
     border-radius: 12px;
 }
 
-.coursePage .content p {
-    margin-left: 50px;
-    width: 40%;
-    font-size: 30px;
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.text p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
