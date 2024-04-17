@@ -5,6 +5,7 @@ import About from './pages/About/About';
 import Settings from './pages/Settings/Settings';
 import Lessons from './pages/Lessons/Lessons';
 import LessonPage from './pages/LessonPage/LessonPage';
+import Courses from './pages/Courses/Courses';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path='/' element={<ComponentWithMenu child={<About />} />} />
           <Route path='/settings' element={<ComponentWithMenu child={<Settings />} />} />
           <Route path='/lessons' element={<ComponentWithMenu child={<Lessons />} />} />
+          <Route path='/courses' element={<ComponentWithMenu child={<Courses />} />} />
           <Route path='/lessons/page/:id' element={<LessonPage />} />
         </Routes>
       </BrowserRouter>

@@ -26,7 +26,7 @@ const Menu = ({ menu }) => {
           :
           <div>
             <Link to='/'>Главная</Link>
-            <Link to='/lessons'>Уроки</Link>
+            <Link to='/courses'>Наши курсы</Link>
             <p>Статистика</p>
             <p>Менторы</p>
             <p>Поддержка</p>
